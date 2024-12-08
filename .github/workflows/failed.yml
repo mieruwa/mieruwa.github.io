@@ -1,0 +1,32 @@
+name: Notify Slack on Failure of Pages Deployment
+
+on:
+  workflow_run:
+    workflows:
+      - "pages-build-deployment" # GitHub Pagesのデプロイメント用Workflow
+    types:
+      - completed
+
+jobs:
+  notify-slack:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }} # デプロイが失敗した場合のみ実行
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Extract repository name
+        id: extract-repo-name
+        run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+
+      - name: Send notification to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          COMMIT_AUTHOR: ${{ github.event.workflow_run.actor }}
+          COMMIT_SHA: ${{ github.event.workflow_run.head_commit.id }}
+          REPOSITORY_NAME: ${{ env.REPOSITORY_NAME }}
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data "$(cat <<EOF
+          {
+            "text": "🚨 GitHubActions DeployFailed! 🚨\n\n<${REPOSITORY_NAME}>のデプロイに失敗しました。\n\n対象コミット: <${COMMIT_SHA}> by ${COMMIT_AUTHOR}\n\n対応着手時・完了後、本チャンネルにて経緯を報告ください。"
+          }
+          EOF
+          )" $SLACK_WEBHOOK_URL
