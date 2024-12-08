@@ -27,28 +27,32 @@ jobs:
 
       - name: Send notification to Slack using Python
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  # GitHub Secretsから取得
           COMMIT_AUTHOR: ${{ github.event.workflow_run.actor }}
           COMMIT_SHA: ${{ github.event.workflow_run.head_commit.id }}
           REPOSITORY_NAME: ${{ env.REPOSITORY_NAME }}
         run: |
           import requests
           import os
-          import json  # jsonモジュールをインポート
+          import json
 
+          # Slack Webhook URLを環境変数から取得
           webhook_url = os.getenv('SLACK_WEBHOOK_URL')
-          commit_author = os.getenv('COMMIT_AUTHOR')
-          commit_sha = os.getenv('COMMIT_SHA')
-          repository_name = os.getenv('REPOSITORY_NAME')
-
-          # メッセージの内容を構成
-          message = {
-              "text": f"🚨 GitHubActions DeployFailed! 🚨\n\n<{repository_name}>のデプロイに失敗しました。\n\n対象コミット: <{commit_sha}> by {commit_author}\n\n対応着手時・完了後、本チャンネルにて経緯を報告ください。"
+          
+          # メッセージデータ
+          payload = {
+              "text": f"🚨 GitHubActions DeployFailed! 🚨\n\n<{os.getenv('REPOSITORY_NAME')}>のデプロイに失敗しました。\n\n対象コミット: <{os.getenv('COMMIT_SHA')}> by {os.getenv('COMMIT_AUTHOR')}\n\n対応着手時・完了後、本チャンネルにて経緯を報告ください。"
           }
 
-          # Slackにメッセージを送信
-          response = requests.post(webhook_url, json=message)
+          # POSTリクエストを送信
+          response = requests.post(
+              webhook_url,
+              data=json.dumps(payload),
+              headers={'Content-Type': 'application/json'}
+          )
 
-          # 応答の確認
-          if response.status_code != 200:
-              raise ValueError(f"Request to slack returned an error {response.status_code}, the response is: {response.text}")
+          # レスポンスを確認
+          if response.status_code == 200:
+              print("メッセージが送信されました!")
+          else:
+              print(f"エラーが発生しました: {response.status_code} - {response.text}")
