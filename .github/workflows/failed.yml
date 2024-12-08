@@ -32,7 +32,6 @@ jobs:
           COMMIT_SHA: ${{ github.event.workflow_run.head_commit.id }}
           REPOSITORY_NAME: ${{ env.REPOSITORY_NAME }}
         run: |
-          python - <<EOF
           import requests
           import os
           import json  # jsonモジュールをインポート
@@ -50,4 +49,3 @@ jobs:
 
           if response.status_code != 200:
               raise ValueError(f"Request to slack returned an error {response.status_code}, the response is: {response.text}")
-          EOF
