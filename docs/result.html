@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>処理結果</title>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <h1>処理結果</h1>
+    <div id="result">
+        <p>お問い合わせを受け付けました。ありがとうございます。</p>
+    </div>
+    <button id="okBtn">OK</button>
+
+    <py-script>
+        from js import sessionStorage
+        import js
+
+        # Slack Webhook URL
+        WEB_HOOK_URL = "https://hooks.slack.com/services/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"
+
+        # SessionStorageからデータを取得
+        category = sessionStorage.getItem("category")
+        email = sessionStorage.getItem("email")
+        message = sessionStorage.getItem("message")
+
+        # Slackに送るメッセージを作成
+        payload = {
+            "text": f"新しいお問い合わせがありました。\n\n*カテゴリ:* {category}\n*メールアドレス:* {email}\n*内容:*\n{message}"
+        }
+
+        async def send_to_slack():
+            # Webhookに通知を送信
+            await js.pyfetch.fetch(
+                WEB_HOOK_URL,
+                method="POST",
+                headers={"Content-Type": "application/json"},
+                body=js.JSON.stringify(payload)
+            )
+
+        # 非同期関数の実行
+        send_to_slack()
+    </py-script>
+
+    <script>
+        // OKボタンのクリック処理
+        document.getElementById("okBtn").addEventListener("click", () => {
+            // contact.htmlに戻る
+            window.location.href = "contact.html";
+        });
+    </script>
+</body>
+</html>

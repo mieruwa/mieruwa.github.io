@@ -22,7 +22,5 @@ document.getElementById("backBtn").addEventListener("click", () => {
 
 // 送信ボタンの処理
 document.getElementById("submitBtn").addEventListener("click", () => {
-    alert("お問い合わせ内容が送信されました！");
-    sessionStorage.clear(); // データをクリア
-    window.location.href = "contact.html"; // 初期画面に戻る
+    window.location.href = "result.html";
 });
