@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャット送信</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ミエルワ</div>
+            <ul>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="index.html">HOME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="chat-main">
+        <div class="chat-container">
+            <h2 id="chat-profile-name"></h2>
+            <p id="chat-profile-description"></p>
+            <textarea placeholder="ここにメッセージを入力してください..." class="chat-input"></textarea>
+            <button class="send-button">送信</button>
+        </div>
+    </main>
+
+    <script>
+        // URLクエリパラメータからプロフィール情報を取得
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const profile = params.get('profile');
+
+        // プロフィール情報を画面に表示
+        document.getElementById('chat-profile-name').textContent = name || 'プロフィール名がありません';
+        document.getElementById('chat-profile-description').textContent = profile || 'プロフィール情報がありません';
+    </script>
+</body>
+</html>
