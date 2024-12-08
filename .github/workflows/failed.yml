@@ -41,11 +41,14 @@ jobs:
           commit_sha = os.getenv('COMMIT_SHA')
           repository_name = os.getenv('REPOSITORY_NAME')
 
+          # メッセージの内容を構成
           message = {
               "text": f"🚨 GitHubActions DeployFailed! 🚨\n\n<{repository_name}>のデプロイに失敗しました。\n\n対象コミット: <{commit_sha}> by {commit_author}\n\n対応着手時・完了後、本チャンネルにて経緯を報告ください。"
           }
 
+          # Slackにメッセージを送信
           response = requests.post(webhook_url, json=message)
 
+          # 応答の確認
           if response.status_code != 200:
               raise ValueError(f"Request to slack returned an error {response.status_code}, the response is: {response.text}")
