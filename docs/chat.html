@@ -3,39 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>チャット送信</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>相談チャット - ミエルワ</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="chat.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">ミエルワ</div>
-            <ul>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="index.html">HOME</a></li>
-            </ul>
+            <button class="back-button">ホームに戻る</button>
+            <h1 class="chat-header-title">相談チャット</h1>
         </nav>
     </header>
 
-    <main class="chat-main">
-        <div class="chat-container">
-            <h2 id="chat-profile-name"></h2>
-            <p id="chat-profile-description"></p>
-            <textarea placeholder="ここにメッセージを入力してください..." class="chat-input"></textarea>
-            <button class="send-button">送信</button>
-        </div>
+    <main>
+        <section class="chat-section">
+            <div class="profile-container">
+                <img id="consultation-image" class="profile-image" alt="プロフィール画像">
+                <div>
+                    <h2 id="consultation-name">相談相手</h2>
+                    <p id="consultation-description">プロフィール情報がありません。</p>
+                </div>
+            </div>
+
+            <form class="consultation-form">
+                <label for="your-name">あなたの名前</label>
+                <input type="text" id="your-name" placeholder="あなたの名前を入力してください">
+
+                <label for="consultation-content">相談内容</label>
+                <textarea id="consultation-content" placeholder="相談内容を入力してください"></textarea>
+
+                <button type="button" id="generate-message" class="generate-message-button">メッセージを生成</button>
+            </form>
+
+            <div class="message-section">
+                <label for="message-input">メッセージ</label>
+                <textarea id="message-input" placeholder="ここにメッセージを入力してください"></textarea>
+                <button type="button" class="send-button">送信</button>
+            </div>
+        </section>
     </main>
 
-    <script>
-        // URLクエリパラメータからプロフィール情報を取得
-        const params = new URLSearchParams(window.location.search);
-        const name = params.get('name');
-        const profile = params.get('profile');
-
-        // プロフィール情報を画面に表示
-        document.getElementById('chat-profile-name').textContent = name || 'プロフィール名がありません';
-        document.getElementById('chat-profile-description').textContent = profile || 'プロフィール情報がありません';
-    </script>
+    <script src="chat.js"></script>
 </body>
 </html>
