@@ -30,6 +30,9 @@ document.getElementById("CONFIRM_BTN").addEventListener("click", () => {
         return;
     } else if (!validateEmail(email)) {
         return;
+    } else if (message.length === 0){
+        alert("お問い合わせ内容をご入力ください。")
+        return;
     }
     // 確認画面に移動
     window.location.href = "confirm.html";
