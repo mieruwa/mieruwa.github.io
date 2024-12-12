@@ -1,0 +1,65 @@
+/* フォームの共通スタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form-container h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #2e8b57;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #228b22;
+}
+
+.form-container a {
+    display: block;
+    margin-top: 10px;
+    color: #2e8b57;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
