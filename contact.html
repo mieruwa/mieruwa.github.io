@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT - ミエルワ</title>
+    <link rel="stylesheet" href="subpage-header.css">
+</head>
+<body>
+    <header class="subpage-header">
+        <nav>
+            <button class="subpage-back-button" onclick="window.location.href='index.html'">ホームに戻る</button>
+            <h1 class="subpage-header-title">お問い合わせ</h1>
+        </nav>
+    </header>
+    <main>
+        <h1>CONTACT</h1>
+        <p>下記のフォームよりお問い合わせください。</p>
+        <div>
+            <h2>お問い合わせの種類を選択</h2>
+            <ul>
+            <label for="category">お問い合わせカテゴリ:</label><br></ul>
+            <select id="category">
+            <option value="issue">問題</option>
+            <option value="feedback">ご意見・ご要望</option>
+            </select>
+        </div>
+        <div>
+            <h2>必要事項入力</h2>
+            <ul>返信用メールアドレス</ul>
+            <input type="email" id="email" placeholder="example@example.com">
+        </div>
+        <div>
+            <ul>お問い合わせ内容</ul>
+            <textarea id="message" rows="5" placeholder="お問い合わせ内容を入力してください"></textarea>
+        </div>
+        <div>
+            <button type="button" id="CONFIRM_BTN">入力内容確認画面へ</button>
+            <script src="form.js"></script>
+        </div>
+    </main>
+</body>
+</html>

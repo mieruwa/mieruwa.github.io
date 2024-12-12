@@ -1,0 +1,307 @@
+/* グローバルスタイル */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f9fafb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #2e8b57;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffa500;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ABOUTセクション */
+.about {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 50px 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about .text {
+    flex: 1;
+}
+
+.about .text h2 {
+    font-size: 2.2rem;
+    color: #2e8b57;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.about .text h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ffa500;
+    margin-top: 10px;
+}
+
+.about .text p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.about .image {
+    flex: 1;
+    text-align: center;
+}
+
+.about .image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* NEWSセクション */
+.news {
+    padding: 50px 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.news h2 {
+    font-size: 2.2rem;
+    color: #2e8b57;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.news-item {
+    background-color: #f9fafb;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.news-item .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2e8b57;
+}
+
+.news-item .date {
+    font-size: 1rem;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* MEMBERSセクション */
+.members {
+    padding: 50px 30px;
+    background-color: #f3f4f6;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.members h2 {
+    font-size: 2.2rem;
+    color: #2e8b57;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.member-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.member-card {
+    background-color: white;
+    flex: 0 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.member-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.member-card h3 {
+    font-size: 1.5rem;
+    color: #2e8b57;
+    margin-bottom: 10px;
+}
+
+.member-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.member-card .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.member-card .social-links a {
+    font-size: 1.5rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.member-card .social-links a:hover {
+    color: #ffa500;
+}
+
+/* FAQセクション */
+.faq {
+    padding: 50px 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.faq h2 {
+    font-size: 2.2rem;
+    color: #2e8b57;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #2e8b57;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item h3:hover {
+    background-color: #1f623d;
+}
+
+.faq-item .answer {
+    display: none;
+    padding: 15px;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* CONTACT USセクション */
+.contact {
+    padding: 50px 30px;
+    background-color: #f9fafb;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.2rem;
+    color: #2e8b57;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #1f623d;
+}

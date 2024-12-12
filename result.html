@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>処理結果</title>
+</head>
+<body>
+    <h1>処理結果</h1>
+    <div id="result">
+        <p>お問い合わせを受け付けました。ありがとうございます。</p>
+    </div>
+    <button id="okBtn">OK</button>
+
+    <script>
+        // OKボタンのクリック処理
+        document.getElementById("okBtn").addEventListener("click", () => {
+            // contact.htmlに戻る
+            window.location.href = "contact.html";
+        });
+    </script>
+</body>
+</html>
