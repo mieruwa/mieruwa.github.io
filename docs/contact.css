@@ -1,0 +1,113 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #333;
+}
+
+/* メインコンテンツのスタイル */
+main {
+    max-width: 800px;
+    margin: 80px auto; /* ヘッダーとの間隔を確保 */
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+main h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2e8b57;
+}
+
+main p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* セクションタイトルのスタイル */
+main h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2e8b57;
+    border-left: 4px solid #ffa500;
+    padding-left: 10px;
+}
+
+/* ラベルと入力フォームのスタイル */
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+select, input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input:focus, textarea:focus {
+    border-color: #ffa500;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ボタンのスタイル */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    background-color: #2e8b57;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1f623d;
+}
+
+button:active {
+    background-color: #155834;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    main h1 {
+        font-size: 1.8rem;
+    }
+
+    main h2 {
+        font-size: 1.3rem;
+    }
+
+    select, input, textarea, button {
+        font-size: 0.9rem;
+    }
+}

@@ -6,12 +6,9 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-.subpage-header nav {
     display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 /* 戻るボタンを左端に配置 */
@@ -25,7 +22,7 @@
     text-decoration: underline;
     transition: color 0.3s ease;
     position: absolute;
-    left: 0;
+    left: 20px;
 }
 
 .subpage-back-button:hover {
@@ -34,7 +31,17 @@
 
 /* 中央にタイトルを配置 */
 .subpage-header-title {
-    margin: 0 auto;
     font-size: 1.5em;
     text-align: center;
+    margin: 0;
+    flex-grow: 1;
+    white-space: nowrap; /* タイトルが折り返されないように設定 */
+}
+
+/* ナビゲーション全体の調整 */
+.subpage-header nav {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
