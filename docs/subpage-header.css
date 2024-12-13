@@ -45,3 +45,42 @@
     display: flex;
     align-items: center;
 }
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .subpage-header {
+        padding: 10px; /* モバイル向けにパディングを縮小 */
+    }
+
+    .subpage-back-button {
+        font-size: 0.9em; /* ボタンのフォントサイズを調整 */
+        left: 10px; /* 左側の余白を縮小 */
+    }
+
+    .subpage-header-title {
+        font-size: 1.2em; /* タイトルのフォントサイズを縮小 */
+    }
+}
+
+@media (max-width: 480px) {
+    .subpage-header {
+        flex-direction: column; /* モバイル向けに縦方向に配置 */
+        align-items: flex-start;
+    }
+
+    .subpage-header nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .subpage-back-button {
+        margin-bottom: 5px; /* ボタンとタイトルの間に余白を追加 */
+        position: static; /* モバイル向けに位置を調整 */
+    }
+
+    .subpage-header-title {
+        text-align: left; /* タイトルを左揃えに */
+        margin: 0;
+    }
+}
