@@ -316,3 +316,47 @@ main {
 .consult-button:active {
     transform: scale(0.98); /* 押下時に縮小 */
 }
+
+/* モバイル用メディアクエリ */
+@media (max-width: 768px) {
+    header .logo {
+        font-size: 1em; /* ロゴのフォントサイズをさらに縮小 */
+    }
+
+    header .center-nav li a {
+        font-size: 0.8em; /* ナビゲーションリンクのフォントサイズをさらに縮小 */
+    }
+
+    header .right-nav li a {
+        font-size: 0.8em; /* 右側ナビゲーションリンクのフォントサイズをさらに縮小 */
+    }
+
+    header nav {
+        padding: 0 5px; /* パディングをさらに縮小してスペースを確保 */
+    }
+}
+
+/* モバイル用メディアクエリ */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; /* 縦幅をデフォルトの50vhから60vhに拡大 */
+    }
+
+    .hero .site-description {
+        font-size: 0.8em; /* モバイルでは説明文のフォントサイズを少し小さく */
+        padding: 0 10px; /* 横幅の余白を調整 */
+    }
+
+    .search-container {
+        padding: 15px; /* 検索バーのパディングを少し縮小 */
+    }
+
+    .search-bar {
+        font-size: 14px; /* 検索バー内のテキストサイズを小さく */
+    }
+
+    .search-button {
+        padding: 10px 16px; /* ボタンサイズを調整 */
+        font-size: 14px; /* ボタンのフォントサイズを小さく */
+    }
+}

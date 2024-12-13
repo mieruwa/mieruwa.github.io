@@ -252,56 +252,50 @@ a:hover {
     color: #555;
 }
 
-/* CONTACT USセクション */
-.contact {
-    padding: 50px 30px;
-    background-color: #f9fafb;
-    border-radius: 15px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    text-align: center;
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 15px;
+    }
+
+    .about .text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about .text p {
+        font-size: 1rem;
+    }
+
+    .member-card {
+        flex: 0 1 100%; /* モバイルでは1列表示 */
+        max-width: 100%;
+    }
+
+    .faq h2, .news h2 {
+        font-size: 1.8rem;
+    }
+
+    .news-item .title {
+        font-size: 1.2rem;
+    }
 }
 
-.contact h2 {
-    font-size: 2.2rem;
-    color: #2e8b57;
-    margin-bottom: 20px;
-}
+@media (max-width: 480px) {
+    .about {
+        padding: 20px;
+    }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+    .about .text h2 {
+        font-size: 1.5rem;
+    }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    box-sizing: border-box;
-}
+    .faq h2, .news h2 {
+        font-size: 1.5rem;
+    }
 
-.contact-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-.contact-form button {
-    background-color: #2e8b57;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #1f623d;
+    .news-item .title {
+        font-size: 1rem;
+    }
 }
