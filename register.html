@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会員登録 - ミエルワ</title>
+    <link rel="stylesheet" href="subpage-header.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <!-- サブページ専用ヘッダー -->
+    <header class="subpage-header">
+        <nav>
+            <button class="subpage-back-button" onclick="window.location.href='index.html'">ホームに戻る</button>
+            <h1 class="subpage-header-title">会員登録</h1>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+        <div class="form-container">
+            <h1>会員登録</h1>
+            <form action="register_process.php" method="POST">
+                <input type="text" name="username" placeholder="ユーザー名" required>
+                <input type="email" name="email" placeholder="メールアドレス" required>
+                <input type="password" name="password" placeholder="パスワード" required>
+                <button type="submit">登録</button>
+            </form>
+            <a href="login.html">すでにアカウントをお持ちですか？ログインはこちら</a>
+        </div>
+    </div>
+</body>
+</html>

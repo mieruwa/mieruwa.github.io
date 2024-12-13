@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>確認画面 - ミエルワ</title>
+    <link rel="stylesheet" href="subpage-header.css">
+    <link rel="stylesheet" href="confirm.css">
+</head>
+<body>
+    <!-- サブページ専用ヘッダー -->
+    <header class="subpage-header">
+        <nav>
+            <button class="subpage-back-button" onclick="window.location.href='index.html'">ホームに戻る</button>
+            <h1 class="subpage-header-title">お問い合わせ</h1>
+        </nav>
+    </header>
+
+    <!-- 確認画面の内容 -->
+    <main class="confirmation-container">
+        <h1>入力内容の確認</h1>
+        <div id="confirmation">
+            <!-- 入力内容を表示 -->
+            <p>お問い合わせ内容が以下でよろしいですか？</p>
+            <ul>
+                <li><strong>お問い合わせカテゴリ:</strong> <span id="category"></span></li>
+                <li><strong>返信用メールアドレス:</strong> <span id="email"></span></li>
+                <li><strong>お問い合わせ内容:</strong> <span id="message"></span></li>
+            </ul>
+        </div>
+        <div class="button-group">
+            <button id="backBtn" class="button">修正する</button>
+            <button id="submitBtn" class="button">送信する</button>
+        </div>
+    </main>
+
+    <script src="confirm.js"></script>
+</body>
+</html>
